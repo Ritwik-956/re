@@ -5,12 +5,12 @@ import Footer from "../Footer/Footer";
 import Routers from "../../routers/Routers";
 
 const Layout = () => {
-  const [isLoggedIn,setIsLoggedIn] = useState(true)
+  const [isLoggedIn,setIsLoggedIn] = useState(false)
   return (
     <Fragment>
-      <Header isLoggedIn={isLoggedIn}/>
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <div>
-        <Routers />
+        <Routers isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
       <Footer />
     </Fragment>

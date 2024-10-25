@@ -5,7 +5,9 @@ import "../../styles/car-item.css";
 
 const CarItem = (props) => {
   const { imgUrl, model, carName, automatic, speed, price } = props.item;
-
+  const handleDeleteClick = () => {
+    props.onDelete(props.item.id); // Call the delete function passed from Home
+  };
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
       <div className="car__item">
@@ -16,7 +18,7 @@ const CarItem = (props) => {
         <div className="car__item-content mt-4">
           <h4 className="section__title text-center">{carName}</h4>
           <h6 className="rent__price text-center mt-">
-            ${price}.00 <span>/ Day</span>
+          ₹{price}.00 <span>/ Day</span>
           </h6>
 
           <div className="car__item-info d-flex align-items-center justify-content-between mt-3 mb-4">
@@ -30,14 +32,29 @@ const CarItem = (props) => {
               <i class="ri-timer-flash-line"></i> {speed}
             </span>
           </div>
+          {props.role === "user" ? <div>
+            <button className=" w-50 car__item-btn car__btn-rent">
+              <Link to={`/cars/${carName}`}>Rent</Link>
+            </button>
 
-          <button className=" w-50 car__item-btn car__btn-rent">
-            <Link to={`/cars/${carName}`}>Rent</Link>
-          </button>
+            <button className=" w-50 car__item-btn car__btn-details">
+              <Link to={`/cars/${carName}`}>Details</Link>
+            </button>
+          </div> : <div>
 
-          <button className=" w-50 car__item-btn car__btn-details">
-            <Link to={`/cars/${carName}`}>Details</Link>
-          </button>
+            <button className=" w-50 car__item-btn car__btn-rent">
+              <Link to={`/cars/${carName}`}>View</Link>
+            </button>
+
+            <button className=" w-50 car__item-btn car__btn-rent">
+              <Link to={`/cars/${carName}`}>Update</Link>
+            </button>
+
+            <button onClick={handleDeleteClick} className=" w-50 car__item-btn car__btn-details"> Delete
+              {/* <Link  to={`/cars/${carName}`}>Delete</Link> */}
+            </button>
+          </div>}
+
         </div>
       </div>
     </Col>

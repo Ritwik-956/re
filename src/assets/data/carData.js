@@ -8,6 +8,7 @@ import img06 from "../all-images/cars-img/mercedes-offer.png";
 import img07 from "../all-images/cars-img/toyota-offer-2.png";
 import img08 from "../all-images/cars-img/mercedes-offer.png";
 
+
 const carData = [
   {
     id: 1,
@@ -16,7 +17,8 @@ const carData = [
     carName: "Tesla Malibu",
     imgUrl: img01,
     model: "Model 3",
-    price: 50,
+    price: 5000,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -25,6 +27,7 @@ const carData = [
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
   },
 
+  
   {
     id: 2,
     brand: "Toyota",
@@ -32,7 +35,8 @@ const carData = [
     carName: "Toyota Aventador",
     imgUrl: img02,
     model: "Model-2022",
-    price: 50,
+    price: 5000,
+    availabilityStatus: false,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -48,7 +52,8 @@ const carData = [
     carName: "BMW X3",
     imgUrl: img03,
     model: "Model-2022",
-    price: 65,
+    price: 6500,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -64,7 +69,8 @@ const carData = [
     carName: "Nissan Mercielago",
     imgUrl: img04,
     model: "Model-2022",
-    price: 70,
+    price: 7000,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -80,7 +86,8 @@ const carData = [
     carName: "Ferrari Camry",
     imgUrl: img05,
     model: "Model-2022",
-    price: 45,
+    price: 4500,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -96,7 +103,8 @@ const carData = [
     carName: "Mercedes Benz XC90",
     imgUrl: img06,
     model: "Model-2022",
-    price: 85,
+    price: 8500,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -112,7 +120,8 @@ const carData = [
     carName: "Audi Fiesta",
     imgUrl: img07,
     model: "Model 3",
-    price: 50,
+    price: 5000,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
@@ -128,7 +137,8 @@ const carData = [
     carName: "Rolls Royce Colorado",
     imgUrl: img08,
     model: "Model 3",
-    price: 50,
+    price: 5000,
+    availabilityStatus: true,
     speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",

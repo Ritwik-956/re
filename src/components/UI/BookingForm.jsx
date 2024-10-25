@@ -1,10 +1,26 @@
 import React from "react";
+import {useNavigate} from "react-router-dom"
 import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
+import { v4 as uuidv4 } from 'uuid';
 
-const BookingForm = () => {
+const BookingForm = (props) => {
+  const navigate = useNavigate()
   const submitHandler = (event) => {
     event.preventDefault();
+    console.log(event)
+    const eventObject = {
+      name: event.target[0].value +" "+ event.target[1].value,
+      carName: props.carName,
+      price: props.price,
+      bookingId: uuidv4(),
+      date: event.target[8].value,
+      time: event.target[9].value,
+      toAddress: event.target[5].value,
+      email: event.target[2].value,
+      phone: event.target[3].value,
+    }
+    navigate('/booking-confirmation',{state : {eventObject}})
   };
   return (
     <Form onSubmit={submitHandler}>
@@ -30,7 +46,7 @@ const BookingForm = () => {
       </FormGroup>
 
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
-        <select name="" id="">
+        <select defaultValue={"1 person"} name="person" id="">
           <option value="1 person">1 Person</option>
           <option value="2 person">2 Person</option>
           <option value="3 person">3 Person</option>
@@ -39,7 +55,7 @@ const BookingForm = () => {
         </select>
       </FormGroup>
       <FormGroup className="booking__form d-inline-block ms-1 mb-4">
-        <select name="" id="">
+        <select defaultValue={"1 luggage"} name="luggage" id="">
           <option value="1 luggage">1 luggage</option>
           <option value="2 luggage">2 luggage</option>
           <option value="3 luggage">3 luggage</option>
@@ -67,6 +83,9 @@ const BookingForm = () => {
           placeholder="Write"
         ></textarea>
       </FormGroup>
+      <div className="payment text-end mt-5">
+        <button type="submit" >Book Now</button>
+      </div>
     </Form>
   );
 };
